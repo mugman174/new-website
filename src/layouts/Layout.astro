@@ -1,5 +1,6 @@
 ---
 const { title } = Astro.props
+import GlobalStyle from "../components/GlobalStyle.astro";
 
 ---
 <html lang="en" class="bg-black dark text-white">
@@ -10,31 +11,19 @@ const { title } = Astro.props
     <meta property="og:image"
         content="https://cdn.discordapp.com/avatars/601836455006044163/8ac41d74eed51cc436aee215e6221c72.png">
     <meta property="og:description" content="This is my website.">
-    <style>
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer components {
-nav a {
-    @apply bg-neutral-500 rounded py-2 px-2 hover:bg-neutral-700
-    }
-}
-h1 {
-    @apply text-xl
-}
-</style>
+    <GlobalStyle/>
   </head>
   <body>
-    <nav class="flex shrink-0 p-5 space-x-10 mx-auto bg-neutral-400">
-      <a href="/">Home</a>
-      <a href="/posts">Posts</a>
-      <a href="/contact">Contact</a>
-    </nav>
     <h1>{title}</h1>
     <article>
       <slot />
     </article>
-    <footer />
+    <footer class="fixed inset-x-0 bottom-0">
+      <nav class="flex shrink-0 p-5 space-x-10 justify-center mx-auto">
+        <a href="/">Home</a>
+        <a href="/posts">Posts</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </footer>
   </body>
 </html>
