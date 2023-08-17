@@ -8,8 +8,11 @@
 
     @layer components {
         nav a {
-            padding: 1%;
-            @apply font-mono bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:rounded-full flex;
+            padding: 0.1% 0.3% 0.05%;
+            @apply font-mono bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:rounded-lg md:focus:animate-ping flex;
+        }
+        nav {
+            @apply bg-black;
         }
     }
     h1 {
