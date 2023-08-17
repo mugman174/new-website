@@ -1,17 +1,25 @@
 ---
 ---
-<style is:global>
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-@layer components {
-nav a {
-    padding: 1%;
-    @apply font-mono bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:rounded-full flex
+<style is:global>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer components {
+        nav a {
+            padding: 1%;
+            @apply font-mono bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:rounded-full flex;
+        }
     }
-}
-h1 {
-    @apply text-xl
-}
+    h1 {
+        @apply text-xl;
+    }
+
+    body {
+        /* 20 px margin on the left and right and the top and bottom */
+        @apply m-20;
+        /* wrap text when horizontal space is limited */
+        @apply break-words;
+    }
 </style>
